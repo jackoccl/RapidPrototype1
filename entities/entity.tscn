@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck6l07kd6qh7d"]
+
+[ext_resource type="Script" path="res://entities/scripts/classes/entity.gd" id="1_x526w"]
+[ext_resource type="Script" path="res://entity_timer.gd" id="2_0eack"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7arir"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_x526w")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7arir")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+script = ExtResource("2_0eack")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

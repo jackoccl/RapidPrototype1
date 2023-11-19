@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://wn1pjjaomk6d"]
+
+[ext_resource type="PackedScene" uid="uid://ck6l07kd6qh7d" path="res://entities/entity.tscn" id="1_d7cgn"]
+[ext_resource type="PackedScene" uid="uid://clobo276kgrq1" path="res://entities/player/player.tscn" id="1_u4c3j"]
+[ext_resource type="Script" path="res://entities/player/player_scripts/player.gd" id="2_5u5ta"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6mgm2"]
+
+[sub_resource type="Sky" id="Sky_gwddw"]
+sky_material = SubResource("ProceduralSkyMaterial_6mgm2")
+
+[sub_resource type="Environment" id="Environment_cxhn5"]
+background_mode = 2
+sky = SubResource("Sky_gwddw")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cxhn5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.976975, -0.213354, 0, 0.213354, 0.976975, 0, -0.4289, 3.05913)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Test"
+
+[node name="Player" parent="." instance=ExtResource("1_u4c3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.63868)
+script = ExtResource("2_5u5ta")
+
+[node name="Entity" parent="." instance=ExtResource("1_d7cgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100076, 0.5, -1.22696)
+
+[node name="Entity2" parent="." instance=ExtResource("1_d7cgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80487, 0.434478, -2.45392)

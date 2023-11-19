@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://clobo276kgrq1"]
+
+[ext_resource type="Script" path="res://entities/player/player_scripts/skills.gd" id="1_i8e58"]
+[ext_resource type="Script" path="res://entities/player/player_scripts/skill_scripts/mining.gd" id="2_ec15p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nh2f5"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nh2f5")
+
+[node name="Skills" type="Node" parent="."]
+script = ExtResource("1_i8e58")
+
+[node name="Mining" type="Node" parent="Skills"]
+script = ExtResource("2_ec15p")
+skill_name = "Mining"
+
+[node name="Slayer" type="Node" parent="Skills"]
+script = ExtResource("2_ec15p")
+skill_name = "Slayerx"
