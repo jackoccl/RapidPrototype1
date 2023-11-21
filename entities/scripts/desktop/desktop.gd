@@ -1,6 +1,6 @@
 extends Node2D
 
-var game = preload("res://entities/scripts/desktop/game_window.tscn")
+
 var control
 
 func _ready():
@@ -10,6 +10,6 @@ func _ready():
 
 	
 func _open_game():
-	
+	var game = load("res://entities/scripts/desktop/game_window.tscn")
 	control.add_child(game.instantiate())
 
