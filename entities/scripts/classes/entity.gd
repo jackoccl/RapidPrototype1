@@ -1,7 +1,7 @@
-extends RigidBody3D
+extends StaticBody3D
 class_name WorldEntity
 
-var xp_val: int = 10
+@export var xp_val: int = 10
 var health: int = 100
 var title: String = "Basic Entity"
 

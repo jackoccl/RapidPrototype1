@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs6a7da2btmam"]
+
+[ext_resource type="PackedScene" uid="uid://wn1pjjaomk6d" path="res://node_3d.tscn" id="1_arbrv"]
+
+[node name="Window" type="Window"]
+physics_object_picking = true
+position = Vector2i(350, 36)
+size = Vector2i(500, 500)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Node3D" parent="." instance=ExtResource("1_arbrv")]

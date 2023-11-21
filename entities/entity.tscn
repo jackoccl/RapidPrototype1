@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck6l07kd6qh7d"]
+[gd_scene load_steps=5 format=3 uid="uid://ck6l07kd6qh7d"]
 
 [ext_resource type="Script" path="res://entities/scripts/classes/entity.gd" id="1_x526w"]
-[ext_resource type="Script" path="res://entity_timer.gd" id="2_0eack"]
+[ext_resource type="Script" path="res://entities/scripts/entity_timer.gd" id="2_0eack"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocvvp"]
+albedo_color = Color(0.886275, 0.886275, 0, 0.815686)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7arir"]
 
-[node name="RigidBody3D" type="RigidBody3D"]
-gravity_scale = 0.0
+[node name="RigidBody3D" type="StaticBody3D"]
 script = ExtResource("1_x526w")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_ocvvp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_7arir")

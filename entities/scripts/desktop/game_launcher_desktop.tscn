@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfp7y46bgw0xk"]
+
+[ext_resource type="Script" path="res://entities/scripts/desktop/game_launcher_desktop.gd" id="1_acjuf"]
+[ext_resource type="Texture2D" uid="uid://kfn7ek51ii03" path="res://resources/hud/runescape-icon.png" id="1_l4gt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyil"]
+
+[node name="GameLauncher" type="Area2D"]
+script = ExtResource("1_acjuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_yuyil")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_l4gt3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -16.0
+offset_top = 18.0
+offset_right = 18.0
+offset_bottom = 41.0
+text = "Play"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
