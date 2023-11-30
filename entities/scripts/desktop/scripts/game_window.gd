@@ -1,8 +1,9 @@
 extends Window
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+
 	pass # Replace with function body.
 
 
@@ -13,4 +14,5 @@ func _process(delta):
 
 func _on_close_requested():
 	queue_free()
+	Globals.limiter -=1;
 	pass # Replace with function body.

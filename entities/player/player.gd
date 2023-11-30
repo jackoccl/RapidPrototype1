@@ -11,9 +11,10 @@ func _ready():
 	tar_pos=self.position
 
 func _physics_process(delta):
-	if(self.position!=tar_pos):
-		self.position=position.lerp(tar_pos,1*delta)
-	
+	if(get_parent().focused):
+		if(self.position!=tar_pos):
+			self.position=position.lerp(tar_pos,1*delta)
+		
 
 func _on_static_body_3d_input_event(camera, event, position, normal, shape_idx):
 	

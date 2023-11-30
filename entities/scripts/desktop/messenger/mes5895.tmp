@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhbv7rrbt6w0x"]
+
+[ext_resource type="Script" path="res://entities/scripts/desktop/messenger/scripts/messenger.gd" id="1_5g51c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dslu"]
+bg_color = Color(0.176471, 0.262745, 0.337255, 1)
+
+[sub_resource type="Theme" id="Theme_8yqop"]
+
+[node name="Window2" type="Window"]
+position = Vector2i(0, 36)
+size = Vector2i(700, 500)
+unresizable = true
+script = ExtResource("1_5g51c")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dslu")
+
+[node name="HBoxMain" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 679.0
+offset_bottom = 494.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/HBoxMain"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="VBoxFriends" type="VBoxContainer" parent="Control/HBoxMain"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Panel" type="Panel" parent="Control/HBoxMain/VBoxFriends"]
+custom_minimum_size = Vector2(200, 175)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/HBoxMain/VBoxFriends"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "1"
+alignment = 0
+
+[node name="Button2" type="Button" parent="Control/HBoxMain/VBoxFriends"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "1"
+alignment = 0
+
+[node name="Button3" type="Button" parent="Control/HBoxMain/VBoxFriends"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "1"
+alignment = 0
+
+[node name="Button4" type="Button" parent="Control/HBoxMain/VBoxFriends"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+text = "1"
+alignment = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxMain"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VBoxRight" type="VBoxContainer" parent="Control/HBoxMain"]
+layout_mode = 2
+
+[node name="MessagePanel" type="Panel" parent="Control/HBoxMain/VBoxRight"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+
+[node name="VScrollBar" type="ScrollContainer" parent="Control/HBoxMain/VBoxRight/MessagePanel"]
+custom_minimum_size = Vector2(375, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -200.0
+offset_right = 187.5
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8yqop")
+horizontal_scroll_mode = 0
+
+[node name="VBoxMessages" type="VBoxContainer" parent="Control/HBoxMain/VBoxRight/MessagePanel/VScrollBar"]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="Control/HBoxMain/VBoxRight"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 2
+
+[node name="MessageEdit" type="TextEdit" parent="Control/HBoxMain/VBoxRight/Panel2"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

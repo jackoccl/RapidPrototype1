@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfp7y46bgw0xk"]
 
-[ext_resource type="Script" path="res://entities/scripts/desktop/game_launcher_desktop.gd" id="1_acjuf"]
+[ext_resource type="Script" path="res://entities/scripts/desktop/scripts/game_launcher_desktop.gd" id="1_hg4k8"]
 [ext_resource type="Texture2D" uid="uid://kfn7ek51ii03" path="res://resources/hud/runescape-icon.png" id="1_l4gt3"]
-[ext_resource type="Script" path="res://entities/scripts/desktop/launch_timer.gd" id="3_qt67r"]
+[ext_resource type="Script" path="res://entities/scripts/desktop/scripts/launch_timer.gd" id="3_eybwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuyil"]
 
 [node name="GameLauncher" type="Area2D"]
-script = ExtResource("1_acjuf")
+script = ExtResource("1_hg4k8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
@@ -26,7 +26,7 @@ text = "Play"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
-script = ExtResource("3_qt67r")
+script = ExtResource("3_eybwa")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs6a7da2btmam"]
+
+[ext_resource type="Script" path="res://entities/scripts/desktop/game_window.gd" id="1_o2oy5"]
+[ext_resource type="PackedScene" uid="uid://wn1pjjaomk6d" path="res://entities/game.tscn" id="2_qbakw"]
+
+[node name="Window" type="Window"]
+physics_object_picking = true
+position = Vector2i(350, 36)
+size = Vector2i(500, 500)
+script = ExtResource("1_o2oy5")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Node3D" parent="." instance=ExtResource("2_qbakw")]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
